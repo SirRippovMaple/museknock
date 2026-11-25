@@ -12,6 +12,7 @@ const copy = {
 const sourceCatalog = [
   { source: 'custom', label: { en: 'Custom webhook', ja: '汎用 Webhook', 'zh-CN': '自定义 Webhook' }, examples: ['notification'] },
   { source: 'github', label: { en: 'GitHub', ja: 'GitHub', 'zh-CN': 'GitHub' }, examples: ['push', 'issues', 'pull_request', 'release', 'workflow_run'] },
+  { source: 'agentmail', label: { en: 'AgentMail', ja: 'AgentMail', 'zh-CN': 'AgentMail' }, examples: ['message_received'] },
   { source: 'slack', label: { en: 'Slack', ja: 'Slack', 'zh-CN': 'Slack' }, examples: ['app_mention', 'message', 'reaction_added'] },
   { source: 'line', label: { en: 'LINE', ja: 'LINE', 'zh-CN': 'LINE' }, examples: ['message', 'follow', 'unfollow'] },
   { source: 'telegram', label: { en: 'Telegram', ja: 'Telegram', 'zh-CN': 'Telegram' }, examples: ['message', 'edited_message', 'channel_post', 'edited_channel_post'] },
@@ -28,6 +29,7 @@ const sourceCatalog = [
 const connections: Record<string, { hook?: string; secret?: string; guide: Record<SetupLanguage, string> }> = {
   custom: { hook: 'custom', secret: 'HOOK_TOKEN', guide: { en: 'quick-start', ja: 'クイックスタート', 'zh-CN': '快速开始' } },
   github: { hook: 'github', secret: 'GITHUB_WEBHOOK_SECRET', guide: { en: 'github-repository-events', ja: 'github-のリポジトリイベント', 'zh-CN': 'github-仓库事件' } },
+  agentmail: { hook: 'agentmail', secret: 'AGENTMAIL_WEBHOOK_SECRET', guide: { en: 'connect-a-service-directly', ja: 'サービスを直接接続する', 'zh-CN': '直接连接服务' } },
   slack: { hook: 'slack', secret: 'SLACK_SIGNING_SECRET', guide: { en: 'connect-a-service-directly', ja: 'サービスを直接接続する', 'zh-CN': '直接连接服务' } },
   line: { hook: 'line', secret: 'LINE_CHANNEL_SECRET', guide: { en: 'connect-a-service-directly', ja: 'サービスを直接接続する', 'zh-CN': '直接连接服务' } },
   telegram: { hook: 'telegram', secret: 'TELEGRAM_WEBHOOK_SECRET', guide: { en: 'connect-a-service-directly', ja: 'サービスを直接接続する', 'zh-CN': '直接连接服务' } },

@@ -11,6 +11,8 @@ export type WorkerEnv = {
     MCP_ADMIN_TOKEN: string
     MCP_RECOVERY_TOKEN?: string
     GITHUB_WEBHOOK_SECRET?: string
+    AGENTMAIL_WEBHOOK_SECRET?: string
+    AGENTMAIL_INBOX_ID?: string
     X_OAUTH2_CLIENT_SECRET?: string
     SLACK_SIGNING_SECRET?: string
     LINE_CHANNEL_SECRET?: string

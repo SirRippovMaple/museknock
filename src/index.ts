@@ -10,6 +10,7 @@ import { browserSetupHeaders, browserSetupPage, setupFailureText, setupLanguage 
 import { handleMcp, type McpRole } from './mcp.ts'
 import { registerProvider } from './provider.ts'
 import { settingsHeaders, settingsLanding, settingsPage } from './settings-page.ts'
+import { agentmail } from './providers/agentmail.ts'
 import { github } from './providers/github.ts'
 import { line } from './providers/line.ts'
 import { slack } from './providers/slack.ts'
@@ -33,6 +34,7 @@ const checkTokenRoles: MiddlewareHandler<WorkerEnv> = async (c, next) => {
   return next()
 }
 
+registerProvider(app, 'agentmail', agentmail)
 registerProvider(app, 'github', github)
 registerProvider(app, 'line', line)
 registerProvider(app, 'slack', slack)
